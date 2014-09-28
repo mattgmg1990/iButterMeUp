@@ -19,8 +19,12 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" editable="NO" text="Get ready to cheer up!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEv-pZ-rnE">
                                 <rect key="frame" x="0.0" y="260" width="600" height="164"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kXT-oo-FcT" appends="YES" id="VcX-1g-YMr"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -30,6 +34,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kXT-oo-FcT">
+                    <connections>
+                        <action selector="showNextCompliment:" destination="BYZ-38-t0r" id="JkO-LL-wUW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
