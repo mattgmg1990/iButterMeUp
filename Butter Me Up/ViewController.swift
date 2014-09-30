@@ -32,7 +32,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showNextCompliment(sender: AnyObject) {
+        complimentTextView.selectable = true
         complimentTextView.text = butterModel.getCompliment()
+        complimentTextView.selectable = false
     }
     
     override func didReceiveMemoryWarning() {
