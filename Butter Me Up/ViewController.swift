@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
     @IBOutlet var complimentTextView : UITextView!
     @IBOutlet var tvTapGestureListener : UIGestureRecognizer!
     var butterModel : ButterModel!
+    var synthesizer = AVSpeechSynthesizer()
     
     /*
     class Subscriber : NSObject  {
@@ -33,10 +35,17 @@ class ViewController: UIViewController {
     
     @IBAction func showNextCompliment(sender: AnyObject) {
         complimentTextView.selectable = true
-        complimentTextView.text = butterModel.getCompliment()
+        var compliment = butterModel.getCompliment()
+        complimentTextView.text = compliment
+        speakCompliment(compliment)
         complimentTextView.selectable = false
     }
     
+    func speakCompliment(compliment: String) {
+        var utterance = AVSpeechUtterance(string: compliment)
+        synthesizer.speakUtterance(utterance)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
